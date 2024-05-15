@@ -1,0 +1,116 @@
+
+
+body{
+    /* background-color: #652ad152; */
+    color: black;
+    font-family: sans-serif;
+}
+
+
+
+.cards{
+    background-color: #056d4c66;
+    height: 800px;
+    width: 600px;
+    border-radius: 15px ;
+    box-shadow: white;  
+    margin: auto;
+}
+
+h3{
+    color:#047943c1;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+    padding: 10px;
+    /* background-color: black; */
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+.form{
+    margin-left: 30px;
+}
+
+input[type='text']{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.064);
+    color: black;
+    border-bottom: 1px solid white;
+}
+input[type='email']{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.064);
+    color: black;
+    border-bottom: 1px solid white;
+}
+input[type='password']{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.064);
+    color: black;
+    border-bottom: 1px solid white;
+}
+input[type='radio']{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.064);
+    border:1px solid black;
+
+}
+input[type='checkbox']{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.064);
+    border:1px solid black;
+}
+.lgimg{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.img{
+    width: 100px;
+    
+}
+
+.image{
+    width: 110px;
+    margin-left: 240px;
+}
+.lg{
+    display: flex;
+    align-self: center;
+}
+.form-select{
+    background-color: rgba(255, 255, 255, 0.064);
+}
+
+
+.card{
+    width: 450px;
+    margin: auto;
+}
+
+.certificate{
+    text-align: center;
+    font-size: 60px;
+}
+p{
+    text-align: center;
+}
+.name{
+    text-align: center;
+}
+.par>p{
+    text-align: center;
+    padding: 20px 70px 0px 70px;
+}
+.contact>p{
+    text-align: center;
+    padding-top: 70px;
+    padding-left: 15px;
+    color: rgba(0, 128, 128, 0.637);
+}
+.card{
+    border-radius: 10px;
+    background-color: rgb(214, 202, 187);
+}

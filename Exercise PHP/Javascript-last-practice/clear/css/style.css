@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.content{
+    text-align: end;
+    width: 60%;
+}
+img{
+    margin-right: 30px;
+}
+button{
+    background-color: black;
+    color: white;
+}
+#result{
+    border: 1px solid gray;
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+.price{
+    padding-left: 60px;
+}

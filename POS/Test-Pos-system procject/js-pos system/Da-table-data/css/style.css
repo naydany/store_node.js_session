@@ -1,0 +1,19 @@
+*{
+    font-family: sans-serif;
+}
+
+table{
+
+    border-collapse: collapse;
+    width: 70%;
+    margin: auto;
+}
+td,th{
+    border: 1px solid palevioletred;
+    padding: 10px;
+}
+
+h1{
+    color: teal;
+    margin: 30px;
+}

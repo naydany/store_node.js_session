@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="background-color:none">
+    <div class="container">
+        <div class="show_document">
+            <div class="side-bar-left">
+                <img src="images/logo.png" class="image_logo" width="35px" alt="logo">
+                <ul id="menu">
+                    <li><i class="fa fa-shopping-basket" style="font-size:15px;color:rgb(216, 130, 145);"></i><a
+                            href="pages/dashborad/dashbord.html">Dashborad</a></li>
+                    <li><i class="fa fa-shopping-cart" style="font-size:15px;color:rgb(216, 130, 145);"></i><a
+                            href="pages/product/product.html">Products</a></li>
+                    <li><i class="fa fa-th" style="font-size:15px;color:rgb(216, 130, 145);"></i><a
+                            href="pages/category/category.html">Category</a></li>
+                    <li><i class="	fa fa-cart-arrow-down" style="font-size:15px;color:rgb(216, 130, 145);"></i><a
+                            href="#">Order</a></li>
+                </ul>
+            </div>
+            <div class="side-bar-center">
+                <div class="header">
+                    <h2 class="head2">POS SYSTEM</h2>
+                </div>
+                <!-- <div id="pills-pie">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected class="selected">All Gategories</option>
+                        <option value="1" id="pills-home-pie" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" >Drink</option>
+                        <option value="2">Cookie</option>
+                        <option value="3">Fruit</option>
+                    </select>
+                </div> -->
+                <div class="button">
+                    <button class="btn" onclick="filterObjects('all')">All</button>
+                    <button class="btn" onclick="filterObjects('drink')" >Drink</button>
+                    <button class="btn" onclick="filterObjects('cookie')" >Cookie</button>
+                    <button class="btn" onclick="filterObjects('fruit')">Fruit</button>
+                </div>
+
+                <div class="content">
+                    <button class="create-new-card" onclick="onAdd()">Add Product</button>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="search your favorite...">
+                        <button class="btn " type="button" id="button-addon2"><i class="fa fa-search"
+                                style="font-size:15px;color:rgb(216, 130, 145);"></i></button>
+                    </div>
+
+                </div>
+                <div class="card-products" id="pills-home" role="piepanel" aria-labelledby="pills-home-pie">
+                    <!-- <div class="card" id="cards">
+                        <h4 class="name-pro"><b>RruMoo</b></h4>
+                        <div class="text-content-card">
+                            <div class="quantity">
+                                <p><span class="Quan">Quantity:</span><span class="num"> 4</span></p>
+                                <p class="price">$5:00</p>
+                            </div>
+                        </div>
+                        <button id="add-card">add to card</button>
+                    </div> -->
+
+                </div>
+
+            </div>
+            <!-- ======= Dialog ===== -->
+            <div class="dialog_container">
+                <dialog open>
+                    <h1>Add Product</h1>
+                    <div class="product_id input">
+                        <label for="id">ID</label>
+                        <input type="text" name="id" id="id" placeholder="Product id..." maxlength="25">
+                        <p class="error_id error" style="display: none;">Invalid ID*</p>
+                    </div>
+                    <div class="product-name input">
+                        <label for="product-name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Product Name... " maxlength="25">
+                        <p class="error_name error" style="display: none;">Invalid Name*</p>
+
+                    </div>
+                    <div class="product_price input">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" id="price" min="1" placeholder="Your price ...">
+                        <p class="error_price error" style="display: none;">Invalid Number*</p>
+                    </div>
+                    <div class="input">
+                        <label for="kind-product">category</label>
+                        <select name="category" id="category">
+                            <option disabled selected>category</option>
+                            <option value="drink">Drink</option>
+                            <option value="cookie">Cookie</option>
+                            <option value="fruit">Fruit</option>
+                        </select>
+                        <p class="error_size error" style="display: none;">Choose Size*</p>
+                    </div>
+                    <div class="input">
+                        <label for="quantity">Quantity</label>
+                        <select name="quantity" id="quantity">
+                            <option disabled selected>Number</option>
+                            <option value="5">5</option>
+                            <option value="8">8</option>
+                            <option value="20">20</option>
+                            <option value="12">12</option>
+                            <option value="12">23</option>
+                            <option value="12">50</option>
+                        </select>
+                        <p class="error_size error" style="display: none;">Choose Size*</p>
+                    </div>
+                    <div class="card_button btn_dialog">
+                        <button type="button" onclick="cancel()">Cancel</button>
+                        <button type="button" onclick="addProduct()">Add Product</button>
+                    </div>
+                </dialog>
+            </div>
+
+
+            <!-- ===============side-bar-right======= -->
+            <div class="side-bar-right">
+                <div class="header2">
+                    <i class="fa fa-sign-out" id="iconlogout" style="font-size:20px;color:black;"></i>
+                    <i class="	fa fa-cart-arrow-down" id="iconcard" style="font-size:20px;color:black;"></i>
+                </div>
+                <div class="box-store-card">
+                    <h3>Current Order</h3>
+                    <hr>
+                    <div class="stor-card">
+                        <ul id="order-list" class="list-unstyled">
+                            <!-- <li class="list">
+                                <span id="detail">Trumoo</span>
+                                <input id="detail" class="detail" type="number" value="1">
+                                <span id="detail" class="price">$ 0.99</span>
+                                <i id="detail" class="fa fa-trash" style="font-size:20px;color:red;"></i>
+                            </li> -->
+                        </ul>
+                        <h4 id="total">Total: <span class="total-price">0</span></h4>
+
+                        <button class="order">Checkout</button>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
